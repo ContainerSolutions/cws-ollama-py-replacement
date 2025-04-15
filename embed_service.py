@@ -6,7 +6,7 @@ import numpy as np
 app = FastAPI()
 
 # Load the model ONCE into memory (fast startup)
-model = SentenceTransformer('all-MiniLM-L6-v2')  # 384-dim, fast and solid
+model = SentenceTransformer('all-MiniLM-L6-v2', device="cuda")  # 384-dim, fast and solid
 
 class EmbedRequest(BaseModel):
     text: str
